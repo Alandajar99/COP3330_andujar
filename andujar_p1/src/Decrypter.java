@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Decrypter {
 
 
-    public static void main(String[] args){
+    public void main(String[] args){
 
     /*
     Accept a string of 4 Integers
@@ -17,7 +17,7 @@ public class Decrypter {
 
     }
 
-    public static String decrypt(String code)
+    public String decrypt(String code)
     {
         int[] n = {0, 0, 0, 0};
 
@@ -41,7 +41,7 @@ public class Decrypter {
         return decryptedValue;
     }
 
-    private static int doMath(int digit) {
+    private int doMath(int digit) {
 
         digit += 10;
         digit -= 7;
@@ -49,7 +49,7 @@ public class Decrypter {
         return digit;
     }
 
-    public static void swapIndices(int[] n){
+    public void swapIndices(int[] n){
         int temp = 0;
 
         temp = n[0];
@@ -61,7 +61,7 @@ public class Decrypter {
         n[3] = temp;
     }
 
-    public static String concatArr(int [] n) { //Concat int array into string
+    public String concatArr(int [] n) { //Concat int array into string
 
         String str = "";
         for (int i = 0; i < n.length; i++)

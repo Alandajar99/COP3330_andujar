@@ -5,7 +5,7 @@ public class Encrypter {
     Scanner scanner = new Scanner(System.in);
 
 
-    public static void main(String[] args){
+    public void main(String[] args){
 
     /*
     Accept a string of 4 Integers
@@ -18,7 +18,7 @@ public class Encrypter {
        String n = encrypt(args[0]);
     }
 
-    public static String encrypt(String code)
+    public String encrypt(String code)
     {
         int[] n = {0, 0, 0, 0};
 
@@ -39,14 +39,14 @@ public class Encrypter {
         return encryptedValue;
 
     }
-    private static int doMath(int digit) {
+    private int doMath(int digit) {
 
         digit = (digit + 7);
         digit %= 10;
         return digit;
     }
 
-    public static void swapIndices(int[] n){
+    public void swapIndices(int[] n){
         int temp = 0;
 
             temp = n[0];
@@ -57,7 +57,7 @@ public class Encrypter {
             n[1] = n[3];
             n[3] = temp;
     }
-    public static String concatArr(int [] n){
+    public String concatArr(int [] n){
 
         String str = "";
         for(int i=0;i<n.length;i++)
