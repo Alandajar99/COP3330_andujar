@@ -14,10 +14,31 @@ public class App {
             BodyMassIndex bmi = new BodyMassIndex(height, weight);
             bmiData.add(bmi);
 
-            //displayBmiInfo(bmi);
+            displayBmiInfo(bmi);
         }
 
-      //  displayBmiStatistics(bmiData);
+        displayBmiStatistics(bmiData);
+    }
+
+
+    public static void displayBmiStatistics(ArrayList<BodyMassIndex> bmiData) {
+        double average;
+        double sum = 0;
+
+        for(int i = 0; i<bmiData.size(); i++){
+            sum += bmiData.get(i).calcBmi(bmiData.get(i).height, bmiData.get(i).weight);
+        }
+        average = sum / bmiData.size();
+    }
+
+    public static void displayBmiInfo(BodyMassIndex bmi) {
+
+        String category = "";
+
+        double bmiScore = bmi.calcBmi(bmi.height,bmi.weight);
+        category = bmi.bmiCategory(bmi.height,bmi.weight);
+        System.out.println(bmiScore + " , " + category);
+
     }
 
     private static boolean moreInput() {
@@ -33,7 +54,7 @@ public class App {
 
     public static double getUserHeight(){
 
-        double height = 68;
+        double height = 1;
 
         System.out.println("Enter user height in inches.");
         height = scan.nextDouble();
@@ -41,6 +62,7 @@ public class App {
             System.out.println("Please enter a positive value.");
             height = scan.nextDouble();
         }
+
         return height;
 
     }
@@ -55,6 +77,7 @@ public class App {
             System.out.println("You must be very thin. Please enter a positive value.");
             weight = scan.nextDouble();
         }
+
 
         return weight;
     }
